@@ -1,0 +1,12 @@
+services:
+  vaultgraph:
+    build:
+      context: .
+      args:
+        INSTALL_BGE: "false"      # "true" adds sentence-transformers (large image)
+    ports: ["7860:7860"]
+    env_file: [.env]               # cp .env.example .env  and set JWT_SECRET (required: the image runs with ENV=production)
+    volumes:
+      - vaultgraph-data:/data      # optional persistence for local use; set VAULTGRAPH_DB=/data/vaultgraph.db in .env
+volumes:
+  vaultgraph-data:

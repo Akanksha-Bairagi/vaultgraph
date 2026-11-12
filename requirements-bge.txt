@@ -1,0 +1,2 @@
+# Optional: local BAAI/bge-small-en-v1.5 embeddings (pulls in PyTorch: several hundred MB). Not needed for the default hash embedder.
+sentence-transformers>=3.0
